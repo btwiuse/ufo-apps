@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ufo teleport https://ufo.k0s.io/index https://react-esbuild-starter.vercel.app/
