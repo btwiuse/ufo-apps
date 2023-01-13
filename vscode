@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function k(){
+  kill %1
+}
+
+ufo teleport https://ufo.k0s.io/code http://localhost:8000 &
+
+trap k SIGINT
+
+code-server serve-local --accept-server-license-terms --quality insiders --without-connection-token --port 8000
