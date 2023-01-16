@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+function k(){
+  kill %1
+}
+
+ufo teleport https://ufo.k0s.io/prometheus http://localhost:9090/prometheus/ &
+
+trap k SIGINT
+
+# https://prometheus.ufo.k0s.io/prometheus/flags
+prometheus --storage.tsdb.path=./data/prometheus --config.file=prometheus.yml --web.listen-address=0.0.0.0:9090 --web.external-url=https://prometheus.ufo.k0s.io/prometheus/  --web.user-assets=/usr/share/prometheus/web/ui/
+# --web.route-prefix=/prometheus 
+# prometheus --storage.tsdb.path=./data/prometheus --config.file=prometheus.yml --web.listen-address=0.0.0.0:9090
