@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ufo metrics https://ufo.k0s.io/metrics
