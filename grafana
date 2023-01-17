@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function k(){
+  kill %1
+}
+
+ufo teleport https://ufo.k0s.io/grafana http://localhost:3000/grafana/ &
+
+trap k SIGINT
+
+env "GF_PATHS_DATA=$PWD/data/grafana" grafana-server -homepath=/usr/share/grafana/ --config="$PWD/grafana.ini"
