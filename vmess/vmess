@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function k(){
+  kill %1
+}
+
+ufo teleport https://ufo.k0s.io/vmess http://127.0.0.1:10000 &
+
+trap k SIGINT
+
+v2ray
