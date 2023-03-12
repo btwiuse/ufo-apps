@@ -20,7 +20,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "mydomain.me",
+            "address": "vmess.ufo.k0s.io",
             "port": 443,
             "users": [
               {
